@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-// Function to check prime
 int isPrime(int num) {
     if (num <= 1)
         return 0;
@@ -21,7 +20,6 @@ int main() {
     int smaller = x - 1;
     int greater = x + 1;
 
-    // Find nearest smaller prime
     while (smaller > 1) {
         if (isPrime(smaller)) {
             break;
@@ -29,7 +27,6 @@ int main() {
         smaller--;
     }
 
-    // Find nearest greater prime
     while (1) {
         if (isPrime(greater)) {
             break;
@@ -37,7 +34,6 @@ int main() {
         greater++;
     }
 
-    // Output
     if (smaller > 1)
         printf("\nA prime number less than %d is %d.\n", x, smaller);
     else
