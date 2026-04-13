@@ -6,23 +6,19 @@ int main() {
     printf("Enter number of subjects: ");
     scanf("%d", &n);
 
-    // Arrays for subject names and marks
-    char subjects[n][50];   // each subject name up to 49 chars
+    char subjects[n][50];
     float marks[n];
 
     float sum = 0;
     int count = 0;
 
-    // Input subject names and marks
     for (int i = 0; i < n; i++) {
         printf("\nEnter name of subject %d: ", i + 1);
-        scanf("%s", subjects[i]);   // NOTE: no spaces allowed
-
+        scanf("%s", subjects[i]);
         printf("Enter marks for %s: ", subjects[i]);
         scanf("%f", &marks[i]);
     }
 
-    // Process data
     printf("\n--- Passed Subjects ---\n");
     for (int i = 0; i < n; i++) {
         if (marks[i] >= 40) {
@@ -32,7 +28,6 @@ int main() {
         }
     }
 
-    // Output result
     if (count > 0) {
         float average = sum / count;
         printf("\nAverage of passed subjects = %.2f\n", average);
