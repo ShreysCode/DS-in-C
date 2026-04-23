@@ -30,3 +30,11 @@ void traverse(struct BTreeNode* root) {
             traverse(root->children[root->n]);
     }
 }
+
+
+// NOTE: Full B-tree insert is long; this is a skeleton-level implementation
+int main() {
+    printf("B-Tree implementation is concept-heavy.\n");
+    printf("Focus on split-child & insert logic in exams.\n");
+    return 0;
+}
