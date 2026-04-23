@@ -9,3 +9,12 @@ struct BTreeNode {
     int n;
     int leaf;
 };
+
+struct BTreeNode* createNode(int leaf) {
+    struct BTreeNode* node = malloc(sizeof(struct BTreeNode));
+    node->leaf = leaf;
+    node->n = 0;
+    for (int i = 0; i < M; i++)
+        node->children[i] = NULL;
+    return node;
+}
