@@ -39,3 +39,10 @@ struct Node* search(struct Node* root, int key) {
     else
         return search(root->right, key);
 }
+
+// Find minimum value node
+struct Node* findMin(struct Node* root) {
+    while (root->left != NULL)
+        root = root->left;
+    return root;
+}
