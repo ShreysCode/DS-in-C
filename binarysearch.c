@@ -69,3 +69,11 @@ struct Node* deleteNode(struct Node* root, int key) {
             free(root);
             return temp;
         }
+
+     // Node with two children
+        struct Node* temp = findMin(root->right);
+        root->data = temp->data;
+        root->right = deleteNode(root->right, temp->data);
+    }
+    return root;
+}
