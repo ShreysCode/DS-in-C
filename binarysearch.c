@@ -95,3 +95,12 @@ void preorder(struct Node* root) {
         preorder(root->right);
     }
 }
+
+// Postorder traversal
+void postorder(struct Node* root) {
+    if (root != NULL) {
+        postorder(root->left);
+        postorder(root->right);
+        printf("%d ", root->data);
+    }
+}
