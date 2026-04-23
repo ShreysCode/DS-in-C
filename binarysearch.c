@@ -104,3 +104,35 @@ void postorder(struct Node* root) {
         printf("%d ", root->data);
     }
 }
+
+
+// Main function
+int main() {
+    struct Node* root = NULL;
+
+    // Insert elements
+    root = insert(root, 50);
+    insert(root, 30);
+    insert(root, 70);
+    insert(root, 20);
+    insert(root, 40);
+    insert(root, 60);
+    insert(root, 80);
+
+    printf("Inorder: ");
+    inorder(root);
+
+    printf("\nSearching 40: ");
+    if (search(root, 40))
+        printf("Found\n");
+    else
+        printf("Not Found\n");
+
+    // Delete node
+    root = deleteNode(root, 50);
+
+    printf("Inorder after deletion: ");
+    inorder(root);
+
+    return 0;
+}
