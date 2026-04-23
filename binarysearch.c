@@ -15,3 +15,16 @@ struct Node* createNode(int value) {
     newNode->left = newNode->right = NULL;
     return newNode;
 }
+
+// Insert node
+struct Node* insert(struct Node* root, int value) {
+    if (root == NULL)
+        return createNode(value);
+
+    if (value < root->data)
+        root->left = insert(root->left, value);
+    else if (value > root->data)
+        root->right = insert(root->right, value);
+
+    return root;
+}
