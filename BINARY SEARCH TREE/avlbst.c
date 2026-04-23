@@ -19,3 +19,17 @@ struct Node* createNode(int val) {
     n->height = 1;
     return n;
 }
+
+// Right rotation
+struct Node* rightRotate(struct Node* y) {
+    struct Node* x = y->left;
+    struct Node* T2 = x->right;
+
+    x->right = y;
+    y->left = T2;
+
+    y->height = max(height(y->left), height(y->right)) + 1;
+    x->height = max(height(x->left), height(x->right)) + 1;
+
+    return x;
+}
