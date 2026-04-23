@@ -46,3 +46,14 @@ struct Node* findMin(struct Node* root) {
         root = root->left;
     return root;
 }
+
+
+// Delete node
+struct Node* deleteNode(struct Node* root, int key) {
+    if (root == NULL)
+        return root;
+
+    if (key < root->data)
+        root->left = deleteNode(root->left, key);
+    else if (key > root->data)
+        root->right = deleteNode(root->right, key);
