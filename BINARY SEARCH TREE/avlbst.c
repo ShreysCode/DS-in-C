@@ -47,3 +47,7 @@ struct Node* leftRotate(struct Node* x) {
 
     return y;
 }
+
+int getBalance(struct Node* n) {
+    return n ? height(n->left) - height(n->right) : 0;
+}
