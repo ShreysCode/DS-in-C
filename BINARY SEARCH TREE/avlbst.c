@@ -96,3 +96,19 @@ void inorder(struct Node* root) {
         inorder(root->right);
     }
 }
+
+int main() {
+    struct Node* root = NULL;
+    int n, val;
+
+    printf("Enter number of nodes: ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &val);
+        root = insert(root, val);
+    }
+
+    printf("Inorder (AVL): ");
+    inorder(root);
+}
