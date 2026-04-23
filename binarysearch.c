@@ -86,3 +86,12 @@ void inorder(struct Node* root) {
         inorder(root->right);
     }
 }
+
+// Preorder traversal
+void preorder(struct Node* root) {
+    if (root != NULL) {
+        printf("%d ", root->data);
+        preorder(root->left);
+        preorder(root->right);
+    }
+}
