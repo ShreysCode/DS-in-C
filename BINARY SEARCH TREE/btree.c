@@ -18,3 +18,15 @@ struct BTreeNode* createNode(int leaf) {
         node->children[i] = NULL;
     return node;
 }
+
+void traverse(struct BTreeNode* root) {
+    if (root) {
+        for (int i = 0; i < root->n; i++) {
+            if (!root->leaf)
+                traverse(root->children[i]);
+            printf("%d ", root->keys[i]);
+        }
+        if (!root->leaf)
+            traverse(root->children[root->n]);
+    }
+}
